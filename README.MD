@@ -1,6 +1,6 @@
-<p align="center"># 수성 온라인 런처</p>
+<h1 align="center">수성 온라인 런처</h1>
 
-<h1 align="center"> Launcher 1.0 </h1>
+<h2 align="center"> Launcher 1.0 </h2>
 
 <em><h5 align="center">(Forked from Helios Launcher, by Daniel Scalzi)</h5></em>
 
@@ -23,18 +23,6 @@
 * View the status of Mojang's services.
 ​
 This is not an exhaustive list. Download and install the launcher to gauge all it can do!
-
-## Downloads
-
-You can download BulDak Launcher 2.0 from Official Discord Server (https://discord.gg/H5wgeff).
-
-## Contributors
-
-All type of contributions can help to improve BulDak Launcher.
-
-Thank you for your contributions!
-
-[norhu1130](https://github.com/norhu1130)
 
 ## Note on Third-Party Usage
 
