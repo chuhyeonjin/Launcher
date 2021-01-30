@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  linting:
+  npm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,9 +12,7 @@ jobs:
         with:
           node-version: '14.x'
       - run: 'npm install'
-      - run: 'npm run lint'
   build-linux:
-    needs: linting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,7 +24,6 @@ jobs:
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
   build-macos:
-    needs: linting
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
@@ -38,7 +35,6 @@ jobs:
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
   build-windows:
-    needs: linting
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
