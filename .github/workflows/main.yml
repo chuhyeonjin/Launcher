@@ -4,16 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  npm:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14.x'
-      - run: 'npm install'
   build-linux:
-    nedds: npm
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -25,7 +16,6 @@ jobs:
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
   build-macos:
-    nedds: npm
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
@@ -37,7 +27,6 @@ jobs:
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
   build-windows:
-    nedds: npm
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
