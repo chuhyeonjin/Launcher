@@ -6,7 +6,7 @@
       "id": "Mercury-1.12.2",
       "name": "Mercury (Minecraft 1.12.2)",
       "description": "Mercury Running Minecraft 1.12.2 (Forge v14.23.5.2854)",
-      "icon": null,
+      "icon": "https://github.com/norhu1130/Launcher/blob/master/app/assets/images/MCRLogo.png?raw=true",
       "version": "1.0.0",
       "address": "localhost:25565",
       "minecraftVersion": "1.12.2",
