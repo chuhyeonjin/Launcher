@@ -1,0 +1,51 @@
+name: build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - run: 'npm install'
+      - run: 'npm run lint'
+  build-linux:
+    needs: linting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - run: 'npm install'
+      - run: 'npm run dist:linux'
+        env: 
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  build-macos:
+    needs: linting
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - run: 'npm install'
+      - run: 'npm run dist:mac'
+        env: 
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  build-windows:
+    needs: linting
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - run: 'npm install'
+      - run: 'npm run dist:win'
+        env: 
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
