@@ -1136,18 +1136,22 @@ function populateMemoryStatus(){
  * @param {string} execPath The executable path to populate against.
  */
 function populateJavaExecDetails(execPath){
-    const jg = new JavaGuard(DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer()).getMinecraftVersion())
-    jg._validateJavaBinary(execPath).then(v => {
-        if(v.valid){
-            if(v.version.major < 9) {
-                settingsJavaExecDetails.innerHTML = `선택됨: Java ${v.version.major} Update ${v.version.update} (x${v.arch})`
+    try {
+        const jg = new JavaGuard(DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer()).getMinecraftVersion())
+        jg._validateJavaBinary(execPath).then(v => {
+            if(v.valid){
+                if(v.version.major < 9) {
+                    settingsJavaExecDetails.innerHTML = `선택됨: Java ${v.version.major} Update ${v.version.update} (x${v.arch})`
+                } else {
+                    settingsJavaExecDetails.innerHTML = `선택됨: Java ${v.version.major}.${v.version.minor}.${v.version.revision} (x${v.arch})`
+                }
             } else {
-                settingsJavaExecDetails.innerHTML = `선택됨: Java ${v.version.major}.${v.version.minor}.${v.version.revision} (x${v.arch})`
+                settingsJavaExecDetails.innerHTML = '올바른 실행 가능 Java 런타임이 없습니다'
             }
-        } else {
-            settingsJavaExecDetails.innerHTML = '올바른 실행 가능 Java 런타임이 없습니다'
-        }
-    })
+        })
+    } catch (e) {
+        // how?
+    }
 }
 
 /**
