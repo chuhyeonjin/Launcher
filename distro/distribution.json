@@ -10,8 +10,8 @@
       "version": "1.0.0",
       "address": "localhost:25565",
       "minecraftVersion": "1.12.2",
-      "mainServer": false,
-      "autoconnect": false,
+      "mainServer": true,
+      "autoconnect": true,
       "modules": [
         {
           "id": "net.minecraftforge:forge:1.12.2-14.23.5.2854:universal",
