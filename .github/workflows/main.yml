@@ -13,6 +13,7 @@ jobs:
           node-version: '14.x'
       - run: 'npm install'
   build-linux:
+    nedds: npm
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,6 +25,7 @@ jobs:
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
   build-macos:
+    nedds: npm
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
@@ -35,6 +37,7 @@ jobs:
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
   build-windows:
+    nedds: npm
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
