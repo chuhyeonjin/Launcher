@@ -530,7 +530,7 @@ exports.pullRemote = function(){
         return exports.pullLocal()
     }
     return new Promise((resolve, reject) => {
-        const distroURL = 'http://13.125.211.30/distribution.json'
+        const distroURL = 'https://raw.githubusercontent.com/dscalzi/HeliosLauncher/master/docs/sample_distribution.json'
         const opts = {
             url: distroURL,
             timeout: 2500

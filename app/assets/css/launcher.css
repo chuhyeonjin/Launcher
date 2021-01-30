@@ -52,6 +52,22 @@ body, button {
 }*/
 
 /*******************************************************************************
+ *
+ * Login (MicroSoft)
+ *
+ ******************************************************************************/
+
+ #loginMSButton {
+    border-color: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'Avenir Medium';
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    color: rgba(255, 255, 255, 0.75);
+}
+/*******************************************************************************
  *                                                                             *
  * Frame Styles (frame.ejs)                                                    *
  *                                                                             *

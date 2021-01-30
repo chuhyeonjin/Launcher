@@ -1219,7 +1219,7 @@ function populateAboutVersionInformation(){
  */
 function populateReleaseNotes(){
     $.ajax({
-        url: 'https://github.com/hslee1024/BulDakLauncher/releases.atom',
+        url: 'https://github.com/norhu1130/Launcher/releases.atom',
         success: (data) => {
             const version = 'v' + remote.app.getVersion()
             const entries = $(data).find('entry')
@@ -1239,7 +1239,7 @@ function populateReleaseNotes(){
         },
         timeout: 2500
     }).catch(err => {
-        /* settingsAboutChangelogText.innerHTML = '릴리즈 노트를 불러오는 데 실패하였습니다.' */
+     settingsAboutChangelogText.innerHTML = '릴리즈 노트를 불러오는 데 실패하였습니다.'
     })
 }
 
@@ -1287,7 +1287,7 @@ function settingsUpdateButtonStatus(text, disabled = false, handler = null){
  */
 function populateSettingsUpdateInformation(data){
     if(data != null){
-        settingsUpdateTitle.innerHTML = `New ${isPrerelease(data.version) ? '베타 릴리즈' : '정식 릴리즈'} 사용 가능`
+        settingsUpdateTitle.innerHTML = `새 ${isPrerelease(data.version) ? '베타 릴리즈' : '정식 릴리즈'} 사용 가능`
         settingsUpdateChangelogCont.style.display = null
         settingsUpdateChangelogTitle.innerHTML = data.releaseName
         settingsUpdateChangelogText.innerHTML = data.releaseNotes
@@ -1346,4 +1346,4 @@ function prepareSettings(first = false) {
 }
 
 // Prepare the settings UI on startup.
-//prepareSettings(true)
+prepareSettings(true)

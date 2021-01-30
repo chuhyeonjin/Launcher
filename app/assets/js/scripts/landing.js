@@ -322,7 +322,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
             if(m.result == null){
                 setOverlayContent(
                     '오류:<br>호환되는 Java가 없습니다',
-                    '불닭 서버에 접속하기 위해서는 64비트 버전의 Java 8 혹은 그 이상이 필요합니다.<br><br>Java를 설치할까요?<br>설치하면, <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">Oracle의 최종 사용자 계약</a>을 수락하게 됩니다.',
+                    '수성 서버에 접속하기 위해서는 64비트 버전의 Java 8 혹은 그 이상이 필요합니다.<br><br>Java를 설치할까요?<br>설치하면, <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">Oracle의 최종 사용자 계약</a>을 수락하게 됩니다.',
                     'Java 설치',
                     '수동으로 Java 설치'
                 )
@@ -336,7 +336,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                     $('#overlayContent').fadeOut(250, () => {
                         setOverlayContent(
                             '오류:<br>설치된 Java가 없습니다',
-                            '불닭 서버에 접속하기 위해서는 64비트 버전의 Java 8 혹은 그 이상이 필요합니다.',
+                            '수성 서버에 접속하기 위해서는 64비트 버전의 Java 8 혹은 그 이상이 필요합니다.',
                             '확인',
                             '돌아가기'
                         )

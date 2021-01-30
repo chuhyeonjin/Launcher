@@ -1,13 +1,13 @@
 {
-  "name": "buldaklauncher",
-  "version": "2.1.0",
-  "productName": "BulDak Launcher",
-  "description": "Custom Minecraft Launcher for BD Online",
-  "author": "Hyunseo Lee (https://github.com/hslee1024/)",
+  "name": "mercurylauncher",
+  "version": "1.0.0",
+  "productName": "Mercury Launcher",
+  "description": "Custom Minecraft Launcher",
+  "author": "norhu1130 (https://github.com/norhu1130/)",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/hslee1024/BulDakLauncher",
+  "homepage": "https://github.com/norhu1130/Launcher",
   "bugs": {
-    "url": "https://github.com/hslee1024/BulDakLauncher/issues"
+    "url": "https://github.com/norhu1130/Launcher/issues"
   },
   "private": true,
   "main": "index.js",

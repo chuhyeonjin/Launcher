@@ -18,10 +18,10 @@ function getCurrentPlatform(){
 builder.build({
     targets: (process.argv[2] != null && Platform[process.argv[2]] != null ? Platform[process.argv[2]] : getCurrentPlatform()).createTarget(),
     config: {
-        appId: 'buldaklauncher',
-        productName: 'BulDak Launcher',
+        appId: 'mercury-launcher',
+        productName: 'Mercury Launcher',
         artifactName: '${productName}-setup-${version}.${ext}',
-        copyright: 'Copyright © 2020 BD Online',
+        copyright: 'Copyright © 2020 Mercury Onlne',
         directories: {
             buildResources: 'build',
             output: 'dist'
@@ -46,10 +46,10 @@ builder.build({
         },
         linux: {
             target: 'AppImage',
-            maintainer: 'Hyunseo Lee',
-            vendor: 'BD Online',
-            synopsis: 'Custom Minecraft Launcher for BD Online',
-            description: 'Custom Minecraft Launcher for BD Online. All mods, configurations, and updates are handled automatically.',
+            maintainer: 'norhu1130',
+            vendor: 'Mercury Online',
+            synopsis: 'Custom Minecraft Launcher for Mercury',
+            description: 'Custom Minecraft Launcher for Mercury',
             category: 'Game'
         },
         compression: 'maximum',
