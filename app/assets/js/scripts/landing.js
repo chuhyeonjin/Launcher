@@ -84,6 +84,19 @@ function setLaunchEnabled(val){
     document.getElementById('launch_button').disabled = !val
 }
 
+
+function showLaunchFailure(title, desc,code ) {
+    setOverlayContent(
+        title,
+        desc,
+        '확인'
+    )
+    setOverlayHandler(null)
+    toggleOverlay(true)
+    toggleLaunchArea(false)
+}
+
+
 // Bind launch button
 document.getElementById('launch_button').addEventListener('click', function(e){
     loggerLanding.log('Launching game..')
@@ -262,16 +275,6 @@ let serverStatusListener = setInterval(() => refreshServerStatus(true), 300000)
  * @param {string} title The overlay title.
  * @param {string} desc The overlay description.
  */
-function showLaunchFailure(title, desc){
-    setOverlayContent(
-        title,
-        desc,
-        '확인'
-    )
-    setOverlayHandler(null)
-    toggleOverlay(true)
-    toggleLaunchArea(false)
-}
 
 /* System (Java) Scan */
 

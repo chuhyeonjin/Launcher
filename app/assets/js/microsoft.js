@@ -8,7 +8,7 @@ const tokenUri = 'https://login.microsoftonline.com/consumers/oauth2/v2.0/token'
 const authXBLUri = 'https://user.auth.xboxlive.com/user/authenticate'
 const authXSTSUri = 'https://xsts.auth.xboxlive.com/xsts/authorize'
 const authMCUri = 'https://api.minecraftservices.com/authentication/login_with_xbox'
-const profileURI ='https://api.minecraftservices.com/minecraft/profile'
+const profileURI = 'https://api.minecraftservices.com/minecraft/profile'
 
 // Functions
 function requestPromise(uri, options) {
@@ -16,7 +16,7 @@ function requestPromise(uri, options) {
         request(uri, options, (error, response, body) => {
             if (error) {
                 reject(error)
-            } else if (response.statusCode !== 200){
+            } else if (response.statusCode !== 200) {
                 reject([response.statusCode, response.statusMessage, response])
             } else {
                 resolve(response)
@@ -68,9 +68,24 @@ function getXSTSToken(XBLToken) {
             }
         }
         requestPromise(authXSTSUri, options).then(response => {
-            const body = response.body
+            if (response.body.XErr) {
+                switch (response.body.XErr) {
+                    case 2148916233:
+                        reject({
+                            message: '마이크로소프트 계정이 XBox와 연동되지 않았습니다. 연동해주세요.<br>'
+                        })
+                        return
 
-            resolve(body.Token)
+                    case 2148916238: 
+                        reject({
+                            message: '본인인증 되지 않은 계정입니다.'
+                        })
+                        return
+
+                }
+                reject(response.body)
+            }
+            resolve(response.body.Token)
         }).catch(error => {
             reject(error)
         })
@@ -170,6 +185,25 @@ exports.authMinecraft = async accessToken => {
     } catch (error) {
         Promise.reject(error)
     }
+}
+
+exports.checkMCStore = async function(access_token){
+    return new Promise((resolve, reject) => {
+        request.get({
+            url: 'https://api.minecraftservices.com/entitlements/mcstore',
+            json: true,
+            headers: {
+                Authorization: 'Bearer ' + access_token
+            }
+        }, (err, res, body) => {
+            if (err) {
+                resolve(false)
+                return
+            }
+            if(body.items && body.items.length > 0) resolve(true)
+            else resolve(false)
+        })
+    })
 }
 
 exports.getMCProfile = MCAccessToken => {

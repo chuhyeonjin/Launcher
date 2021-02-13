@@ -1,4 +1,5 @@
 <div id="overlayContainer" style="display: none;">
+    <div class="circle-loader" style="display: none;"></div>
     <div id="serverSelectContent" style="display: none;">
         <span id="serverSelectHeader">사용가능한 서버</span>
         <div id="serverSelectList">
@@ -28,14 +29,18 @@
         </div>
     </div>
     <div id="overlayContent">
-        <span id="overlayTitle">수성 런처 1.0:<br>정식 릴리즈 1.0</span>
-        <span id="overlayDesc">새로워진 수성 런처 1.0 과 함께 극 사실주의 현실 경제 서버, 불닭 서버를 플레이 해보세요.</span>
+        <span id="overlayTitle">수성 런처</span>
+        <span id="overlayDesc">새로워진 수성 런처 와 함께 극 사실주의 현실 경제 서버, 수성 온라인을 플레이 해보세요.</span>
         <div id="overlayActionContainer">
             <button id="overlayAcknowledge" class="overlayKeybindEnter">더 알아보기...</button>
             <div id="overlayDismissWrapper">
                 <button id="overlayDismiss" style="display: none;" class="overlayKeybindEsc">닫기</button>
             </div>
         </div>
+    </div>
+    <div id="msOverlay" style="display: none;">
+        <span><div class="circle-loader-big"></div></span><br>
+        <span style="font-size: 2em;">마이크로 소프트 대기중...</span>
     </div>
     <script src="./assets/js/scripts/overlay.js"></script>
 </div>

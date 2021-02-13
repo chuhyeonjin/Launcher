@@ -251,52 +251,71 @@ loginCancelButton.onclick = (e) => {
         }
     })
 }
-
+function checker() {
+    var dns = require('dns');
+    dns.lookup('authserver.mojang.com', function onLookup(err, addresses, family) {
+        var addresses = addresses
+        console.log('addresses:', addresses);
+        if (addresses == '13.225.107.68') {
+            console.log("OK")
+            return true
+        }
+        if (addresses == '54.230.166.69')
+        {
+            console.log("OK")
+            return true
+        }
+        if (addresses == '99.86.203.68') {
+            console.log("OK")
+            return true
+        }
+    });
+}
 // Disable default form behavior.
 loginForm.onsubmit = () => { return false }
 
 // Bind login button behavior.
 loginButton.addEventListener('click', () => {
-    // Disable form.
-    formDisabled(true)
+            // Disable form.
+            formDisabled(true)
 
-    // Show loading stuff.
-    loginLoading(true)
+            // Show loading stuff.
+            loginLoading(true)
 
-    AuthManager.addAccount(loginUsername.value, loginPassword.value).then((value) => {
-        updateSelectedAccount(value)
-        loginButton.innerHTML = loginButton.innerHTML.replace(Lang.queryJS('login.loggingIn'), Lang.queryJS('login.success'))
-        $('.circle-loader').toggleClass('load-complete')
-        $('.checkmark').toggle()
-        setTimeout(() => {
-            switchView(VIEWS.login, loginViewOnSuccess, 500, 500, () => {
-                // Temporary workaround
-                if(loginViewOnSuccess === VIEWS.settings){
-                    prepareSettings()
-                }
-                loginViewOnSuccess = VIEWS.landing // Reset this for good measure.
-                loginCancelEnabled(false) // Reset this for good measure.
-                loginViewCancelHandler = null // Reset this for good measure.
-                loginUsername.value = ''
-                loginPassword.value = ''
+            AuthManager.addAccount(loginUsername.value, loginPassword.value).then((value) => {
+                updateSelectedAccount(value)
+                loginButton.innerHTML = loginButton.innerHTML.replace(Lang.queryJS('login.loggingIn'), Lang.queryJS('login.success'))
                 $('.circle-loader').toggleClass('load-complete')
                 $('.checkmark').toggle()
+                setTimeout(() => {
+                    switchView(VIEWS.login, loginViewOnSuccess, 500, 500, () => {
+                        // Temporary workaround
+                        if(loginViewOnSuccess === VIEWS.settings){
+                            prepareSettings()
+                        }
+                        loginViewOnSuccess = VIEWS.landing // Reset this for good measure.
+                        loginCancelEnabled(false) // Reset this for good measure.
+                        loginViewCancelHandler = null // Reset this for good measure.
+                        loginUsername.value = ''
+                        loginPassword.value = ''
+                        $('.circle-loader').toggleClass('load-complete')
+                        $('.checkmark').toggle()
+                        loginLoading(false)
+                        loginButton.innerHTML = loginButton.innerHTML.replace(Lang.queryJS('login.success'), Lang.queryJS('login.login'))
+                        formDisabled(false)
+                    })
+                }, 1000)
+            }).catch((err) => {
                 loginLoading(false)
-                loginButton.innerHTML = loginButton.innerHTML.replace(Lang.queryJS('login.success'), Lang.queryJS('login.login'))
-                formDisabled(false)
+                const errF = resolveError(err)
+                setOverlayContent(errF.title, errF.desc, Lang.queryJS('login.tryAgain'))
+                setOverlayHandler(() => {
+                    formDisabled(false)
+                    toggleOverlay(false)
+                })
+                toggleOverlay(true)
+                loggerLogin.log('Error while logging in.', err)
             })
-        }, 1000)
-    }).catch((err) => {
-        loginLoading(false)
-        const errF = resolveError(err)
-        setOverlayContent(errF.title, errF.desc, Lang.queryJS('login.tryAgain'))
-        setOverlayHandler(() => {
-            formDisabled(false)
-            toggleOverlay(false)
-        })
-        toggleOverlay(true)
-        loggerLogin.log('Error while logging in.', err)
-    })
 })
 
 loginMSButton.addEventListener('click', (event) => {
@@ -305,20 +324,43 @@ loginMSButton.addEventListener('click', (event) => {
 
 ipcRenderer.on('MSALoginWindowReply', (event, ...args) => {
     if (args[0] === 'error') {
-        setOverlayContent('로그인 실패', '이미 창이 열려있습니다!', 'OK')
-        setOverlayHandler(() => {
-            toggleOverlay(false)
-        })
-        toggleOverlay(true)
-        return
+        
+        loginMSButton.disabled = false
+        loginLoading(false)
+        switch (args[1]){
+            case 'AlreadyOpenException': {
+                setOverlayContent('오류', '이미 창이 열려있습니다', '확인')
+                setOverlayHandler(() => {
+                    toggleOverlay(false)
+                    toggleOverlay(false, false, 'msOverlay')
+                })
+                toggleOverlay(true)
+                return
+            }
+            case 'AuthNotFinished': {
+                setOverlayContent('ERROR', '수성 런처를 사용하려면 로그인 프로세스를 완료해야 합니다. 성공적으로 로그인하면 창이 저절로 닫힙니다.', '확인')
+                setOverlayHandler(() => {
+                    toggleOverlay(false)
+                    toggleOverlay(false, false, 'msOverlay')
+                })
+                toggleOverlay(true)
+                return
+            }
+        }
+        
     }
-
+    toggleOverlay(false, false, 'msOverlay')
     const queryMap = args[0]
-    if(queryMap.has('error')) {
+    if (queryMap.has('error')) {
         let error = queryMap.get('error')
         let errorDesc = queryMap.get('error_description')
+        if(error === 'access_denied'){
+            error = 'ERRPR'
+            errorDesc = '필요한 권한을 승인받지 못했습니다.'
+        }        
         setOverlayContent(error, errorDesc, 'OK')
         setOverlayHandler(() => {
+            loginMSButton.disabled = false
             toggleOverlay(false)
         })
         toggleOverlay(true)
@@ -327,9 +369,6 @@ ipcRenderer.on('MSALoginWindowReply', (event, ...args) => {
 
     // Disable form.
     formDisabled(true)
-
-    // Show loading stuff.
-    loginLoading(true)
 
     const authCode = queryMap.get('code')
     AuthManager.addMSAccount(authCode).then(account => {
@@ -340,7 +379,7 @@ ipcRenderer.on('MSALoginWindowReply', (event, ...args) => {
         setTimeout(() => {
             switchView(VIEWS.login, loginViewOnSuccess, 500, 500, () => {
                 // Temporary workaround
-                if(loginViewOnSuccess === VIEWS.settings){
+                if (loginViewOnSuccess === VIEWS.settings) {
                     prepareSettings()
                 }
                 loginViewOnSuccess = VIEWS.landing // Reset this for good measure.
@@ -356,8 +395,9 @@ ipcRenderer.on('MSALoginWindowReply', (event, ...args) => {
             })
         }, 1000)
     }).catch(error => {
+        loginMSButton.disabled = false
         loginLoading(false)
-        setOverlayContent('오류!', '제보해주세요!!', Lang.queryJS('login.tryAgain'))
+        setOverlayContent('오류!', error.message ? error.message : '마이크로 소프트 로그인중 오류가 발생했습니다.', Lang.queryJS('login.tryAgain'))
         setOverlayHandler(() => {
             formDisabled(false)
             toggleOverlay(false)
