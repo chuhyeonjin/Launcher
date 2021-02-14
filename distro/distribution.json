@@ -8,7 +8,7 @@
       "description": "Mercury Running Minecraft 1.12.2 (Forge v14.23.5.2854)",
       "icon": "https://github.com/norhu1130/Launcher/blob/master/app/assets/images/MCRLogo.png?raw=true",
       "version": "1.0.0",
-      "address": "localhost:25565",
+      "address": "221.162.218.210:25565",
       "minecraftVersion": "1.12.2",
       "mainServer": true,
       "autoconnect": true,
