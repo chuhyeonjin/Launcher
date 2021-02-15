@@ -231,8 +231,8 @@
           "type": "ForgeMod",
           "artifact": {
             "size": 2678747,
-            "url": "https://raw.githubusercontent.com/norhu1130/Launcher/master/distro/servers/Mercury-1.12.2/forgemods/required/Armourers-Workshop-1.12.2-0.51.0.jar",
-            "MD5": "12954551f39bed840b32fd8be8fddb54"
+            "url": "http://plushie.moe:8080/job/Armourers-Workshop-1.12.2/lastSuccessfulBuild/artifact/build/libs/Armourers-Workshop-1.12.2-0.51.0.14.jar",
+            "MD5": "21984b05ac8c32cee7ecdf0459af983d
           }
         },
         {
@@ -241,8 +241,8 @@
           "type": "ForgeMod",
           "artifact": {
             "size": 2454924,
-            "url": "http://plushie.moe:8080/job/Armourers-Workshop-1.12.2/lastSuccessfulBuild/artifact/build/libs/Armourers-Workshop-1.12.2-0.51.0.14.jar",
-            "MD5": "21984B05AC8C32CEE7ECDF0459AF983D"
+            "url": "https://raw.githubusercontent.com/norhu1130/Launcher/master/distro/servers/Mercury-1.12.2/forgemods/required/cfm-6.3.0-mc1.12.2.jar",
+            "MD5": "b1e5c79ed6e9e4602f25419e21497975""
           }
         },
         {
