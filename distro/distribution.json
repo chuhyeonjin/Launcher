@@ -226,13 +226,23 @@
           ]
         },
         {
-          "id": "moe.plushie:armourers_workshop:1.12.2-0.51.0@jar",
-          "name": "Armourer's Workshop",
+          "id": "moe.plushie:Armourers-Workshop:1.12.2-0.51.0@jar",
+          "name": "Armourers-Workshop-1.12.2-0.51.0",
           "type": "ForgeMod",
           "artifact": {
             "size": 2678747,
-            "url": "http://plushie.moe:8080/job/Armourers-Workshop-1.12.2/lastSuccessfulBuild/artifact/build/libs/Armourers-Workshop-1.12.2-0.51.0.14.jar",
-            "MD5": "21984b05ac8c32cee7ecdf0459af983d"
+            "url": "https://media.forgecdn.net/files/3101/995/Armourers-Workshop-1.12.2-0.51.0.jar",
+            "MD5": "12954551f39bed840b32fd8be8fddb54"
+          }
+        },
+        {
+          "id": "com.mbs.overlayimage:Up:4.0@jar",
+          "name": "OverlayImage",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 15882,
+            "url": "https://raw.githubusercontent.com/norhu1130/Launcher/master/distro/servers/Mercury-1.12.2/forgemods/required/OverlayImage-4.0-Up-Client.jar",
+            "MD5": "ac5faaffe9b9dc04d470e7584557683e"
           }
         },
         {
