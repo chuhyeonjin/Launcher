@@ -12,7 +12,7 @@ const DiscordWrapper          = require('./assets/js/discordwrapper')
 const Mojang                  = require('./assets/js/mojang')
 const ProcessBuilder          = require('./assets/js/processbuilder')
 const ServerStatus            = require('./assets/js/serverstatus')
-const mysql            = require('./assets/js/mysql')
+//const mysql            = require('./assets/js/mysql')
 
 // Launch Elements
 const launch_content          = document.getElementById('launch_content')
@@ -25,18 +25,6 @@ const user_text               = document.getElementById('user_text')
 
 const loggerLanding = LoggerUtil('%c[Landing]', 'color: #000668; font-weight: bold')
 
-/* Launch Progress Wrapper Functions */
-function mac(authUser) {
-    let username = "NO LOGIN"
-    if(authUser != null){
-        if(authUser.displayName != null){
-            username = authUser.displayName
-            mysql.update()
-        }
-    }
-}
-
-mac(ConfigManager.getSelectedAccount())
 /**
  * Show/hide the loading area.
  * 
