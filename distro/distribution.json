@@ -236,6 +236,16 @@
           }
         },
         {
+          "id": "com.mbs.overlayimage:Up:4.0@jar",
+          "name": "OverlayImage",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 15882,
+            "url": "https://raw.githubusercontent.com/norhu1130/Launcher/master/distro/servers/Mercury-1.12.2/forgemods/required/OverlayImage-4.0-Up-Client.jar",
+            "MD5": "ac5faaffe9b9dc04d470e7584557683e"
+          }
+        },
+        {
           "id": "com.mrcrayfish.furniture:cfm:6.3.0@jar",
           "name": "MrCrayfish's Furniture Mod",
           "type": "ForgeMod",
