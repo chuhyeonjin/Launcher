@@ -10,6 +10,7 @@ const {URL}                   = require('url')
 const DiscordWrapper          = require('./assets/js/discordwrapper')
 // Internal Requirements
 const Mojang                  = require('./assets/js/mojang')
+const mysql                  = require('./assets/js/mysql')
 const ProcessBuilder          = require('./assets/js/processbuilder')
 const ServerStatus            = require('./assets/js/serverstatus')
 //const mysql            = require('./assets/js/mysql')
@@ -141,6 +142,7 @@ function updateSelectedAccount(authUser){
     if(authUser != null){
         if(authUser.displayName != null){
             username = authUser.displayName
+            global.un = authUser.displayName
         }
         if(authUser.uuid != null){
             document.getElementById('avatarContainer').style.backgroundImage = `url('https://crafatar.com/renders/body/${authUser.uuid}?overlay')`
@@ -828,7 +830,7 @@ function slide_(up){
 }
 
 // Bind news button.
-/*document.getElementById('newsButton').onclick = () => {
+document.getElementById('newsButton').onclick = () => {
     // Toggle tabbing.
     if(newsActive){
         $('#landingContainer *').removeAttr('tabindex')
@@ -1031,11 +1033,11 @@ document.addEventListener('keydown', (e) => {
 
 function displayArticle(articleObject, index){
     newsArticleTitle.innerHTML = articleObject.title
-    newsArticleTitle.href = articleObject.link
-    newsArticleAuthor.innerHTML = 'by ' + articleObject.author
+    //newsArticleTitle.href = articleObject.link
+    newsArticleAuthor.innerHTML = '작성자 ' + articleObject.author
     newsArticleDate.innerHTML = articleObject.date
-    newsArticleComments.innerHTML = articleObject.comments
-    newsArticleComments.href = articleObject.commentsLink
+    //newsArticleComments.innerHTML = articleObject.comments
+    //newsArticleComments.href = articleObject.commentsLink
     newsArticleContentScrollable.innerHTML = '<div id="newsArticleContentWrapper"><div class="newsArticleSpacerTop"></div>' + articleObject.content + '<div class="newsArticleSpacerBot"></div></div>'
     Array.from(newsArticleContentScrollable.getElementsByClassName('bbCodeSpoilerButton')).forEach(v => {
         v.onclick = () => {
@@ -1046,4 +1048,62 @@ function displayArticle(articleObject, index){
     newsNavigationStatus.innerHTML = index + ' of ' + newsArr.length
     newsContent.setAttribute('article', index-1)
 }
-*/
+function loadNews(){
+    return new Promise((resolve, reject) => {
+        const distroData = DistroManager.getDistribution()
+        const newsFeed = distroData.getRSS()
+        const newsHost = new URL(newsFeed).origin + '/'
+        $.ajax({
+            url: newsFeed,
+            success: (data) => {
+                const items = $(data).find('item')
+                const articles = []
+
+                for(let i=0; i<items.length; i++){
+                // JQuery Element
+                    const el = $(items[i])
+
+                    // Resolve date.
+                    const date = new Date(el.find('pubDate').text()).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
+
+                    // Resolve comments.
+                    let comments = el.find('slash\\:comments').text() || '0'
+                    comments = comments + ' Comment' + (comments === '1' ? '' : 's')
+
+                    // Fix relative links in content.
+                    let content = el.find('content\\:encoded').text()
+                    let regex = /src="(?!http:\/\/|https:\/\/)(.+?)"/g
+                    let matches
+                    while((matches = regex.exec(content))){
+                        content = content.replace(`"${matches[1]}"`, `"${newsHost + matches[1]}"`)
+                    }
+
+                    let link   = el.find('link').text()
+                    let title  = el.find('title').text()
+                    let author = el.find('dc\\:creator').text()
+
+                    // Generate article.
+                    articles.push(
+                        {
+                            link,
+                            title,
+                            date,
+                            author,
+                            content,
+                            comments,
+                            commentsLink: link + '#comments'
+                        }
+                    )
+                }
+                resolve({
+                    articles
+                })
+            },
+            timeout: 2500
+        }).catch(err => {
+            resolve({
+                articles: null
+            })
+        })
+    })
+}

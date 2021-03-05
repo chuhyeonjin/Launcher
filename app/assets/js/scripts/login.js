@@ -1,6 +1,9 @@
 /**
  * Script for login.ejs
  */
+
+const { checkServerIdentity } = require('tls')
+
 // Validation Regexes.
 const validUsername         = /^[a-zA-Z0-9_]{1,16}$/
 const basicEmail            = /^\S+@\S+\.\S+$/
@@ -19,6 +22,7 @@ const loginButton           = document.getElementById('loginButton')
 const loginForm             = document.getElementById('loginForm')
 const loginMSButton         = document.getElementById('loginMSButton')
 
+const loggerAlt= LoggerUtil('%c[Alt System]', 'color: #000668; font-weight: bold')
 // Control variables.
 let lu = false, lp = false
 
@@ -255,19 +259,19 @@ function checker() {
     var dns = require('dns');
     dns.lookup('authserver.mojang.com', function onLookup(err, addresses, family) {
         var addresses = addresses
-        console.log('addresses:', addresses);
+        //console.log('addresses:', addresses);
         if (addresses == '13.225.107.68') {
-            console.log("OK")
-            return true
+            //console.log("OK")
+            global.server = true
         }
         if (addresses == '54.230.166.69')
         {
-            console.log("OK")
-            return true
+            //console.log("OK")
+            global.server = true
         }
         if (addresses == '99.86.203.68') {
-            console.log("OK")
-            return true
+            //console.log("OK")
+            global.server = true
         }
     });
 }
@@ -281,7 +285,18 @@ loginButton.addEventListener('click', () => {
 
             // Show loading stuff.
             loginLoading(true)
-
+            var cache_ld = global.server
+            if (cache_ld == false) {
+                loggerAlt.log("본 사용자는 알트로 감지되었습니다.")
+                loginLoading(false)
+                setOverlayContent("알트 감지!!", "로그인 서버가 변조되었습니다.<br><br>관리자에게 문의해주세요.", Lang.queryJS('login.tryAgain'))
+                setOverlayHandler(() => {
+                    formDisabled(false)
+                    toggleOverlay(false)
+                })
+                toggleOverlay(true)
+                return false
+            }
             AuthManager.addAccount(loginUsername.value, loginPassword.value).then((value) => {
                 updateSelectedAccount(value)
                 loginButton.innerHTML = loginButton.innerHTML.replace(Lang.queryJS('login.loggingIn'), Lang.queryJS('login.success'))

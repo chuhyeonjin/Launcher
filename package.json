@@ -1,6 +1,6 @@
 {
   "name": "mercurylauncher",
-  "version": "1.1.0",
+  "version": "1.2.0-alpha",
   "productName": "Mercury Launcher",
   "description": "Custom Minecraft Launcher",
   "author": "norhu1130 (https://github.com/norhu1130/)",
@@ -35,6 +35,7 @@
     "fs-extra": "^9.1.0",
     "github-syntax-dark": "^0.5.0",
     "jquery": "^3.5.1",
+    "mysql": "^2.18.1",
     "node-macaddress": "^0.2.4",
     "request": "^2.88.2",
     "semver": "^7.3.4",
