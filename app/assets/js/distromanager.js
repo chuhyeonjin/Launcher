@@ -474,6 +474,9 @@ class DistroIndex {
     getServers(){
         return this.servers
     }
+    getRSS(){
+        return this.rss
+    }
 
     /**
      * Get a server configuration by its ID. If it does not
