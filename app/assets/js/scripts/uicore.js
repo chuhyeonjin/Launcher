@@ -49,7 +49,7 @@ if(!isDev){
                 break
             case 'update-downloaded':
                 loggerAutoUpdaterSuccess.log('Update ' + info.version + ' ready to be installed.')
-                settingsUpdateButtonStatus('업데이트 적용', false)
+                settingsUpdateButtonStatus('런처를 재시작해주세요!', true)
                 showUpdateUI(info)
                 break
             case 'update-not-available':
