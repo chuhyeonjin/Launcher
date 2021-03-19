@@ -10,10 +10,9 @@ const {URL}                   = require('url')
 const DiscordWrapper          = require('./assets/js/discordwrapper')
 // Internal Requirements
 const Mojang                  = require('./assets/js/mojang')
-const mysql                  = require('./assets/js/mysql')
+//const mysql                  = require('./assets/js/mysql')
 const ProcessBuilder          = require('./assets/js/processbuilder')
 const ServerStatus            = require('./assets/js/serverstatus')
-//const mysql            = require('./assets/js/mysql')
 
 // Launch Elements
 const launch_content          = document.getElementById('launch_content')
