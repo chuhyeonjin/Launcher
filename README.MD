@@ -4,7 +4,7 @@
 
 <em><h5 align="center">(Forked from Helios Launcher, by Daniel Scalzi)</h5></em>
 
-<p align="center">Join BulDak Online without worrying about installing Java, Forge, or other mods. We'll handle that for you.</p>
+<p align="center">Join Mercury Online without worrying about installing Java, Forge, or other mods. We'll handle that for you.</p>
 
 ## Features
 * 🔒 Full account management.
