@@ -1,0 +1,1830 @@
+{
+  "com/mrcrayfish/vehicle/VehicleConfig": {
+    "name": "com/mrcrayfish/vehicle/VehicleConfig",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/common/config/Config;",
+        "target": "com/mrcrayfish/vehicle/VehicleConfig",
+        "values": {
+          "modid": {
+            "value": "vehicle"
+          }
+        }
+      },
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "com/mrcrayfish/vehicle/VehicleConfig",
+        "value": {
+          "value": "vehicle.config.title"
+        }
+      },
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/mrcrayfish/vehicle/VehicleConfig",
+        "values": {
+          "modid": {
+            "value": "vehicle"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "CLIENT",
+        "value": {
+          "value": "Client"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "CLIENT",
+        "value": {
+          "values": [
+            "Client-only configs"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "CLIENT",
+        "value": {
+          "value": "vehicle.config.client"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "SERVER",
+        "value": {
+          "value": "Server"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "SERVER",
+        "value": {
+          "values": [
+            "Server-only configs"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "SERVER",
+        "value": {
+          "value": "vehicle.config.server"
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onConfigChanged(Lnet/minecraftforge/fml/client/event/ConfigChangedEvent$OnConfigChangedEvent;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/VehicleConfig$Client": {
+    "name": "com/mrcrayfish/vehicle/VehicleConfig$Client",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "debug",
+        "value": {
+          "value": "Debug"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "debug",
+        "value": {
+          "values": [
+            "Configuration options for debugging vehicles"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "debug",
+        "value": {
+          "value": "vehicle.config.client.debug"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "interaction",
+        "value": {
+          "value": "Interaction"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "interaction",
+        "value": {
+          "values": [
+            "Configuration options for vehicle interaction"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "interaction",
+        "value": {
+          "value": "vehicle.config.client.interaction"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "display",
+        "value": {
+          "value": "Display"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "display",
+        "value": {
+          "values": [
+            "Configuration for display related options"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "display",
+        "value": {
+          "value": "vehicle.config.client.display"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "controller",
+        "value": {
+          "value": "Controller"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "controller",
+        "value": {
+          "values": [
+            "Configuration options for controller support (Must have Controllable install)"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "controller",
+        "value": {
+          "value": "vehicle.config.client.controller"
+        }
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/VehicleConfig$Controller": {
+    "name": "com/mrcrayfish/vehicle/VehicleConfig$Controller",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "useTriggers",
+        "value": {
+          "value": "Use Triggers"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "useTriggers",
+        "value": {
+          "values": [
+            "If true, will use the triggers on controller to control the acceleration of the vehicle."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "useTriggers",
+        "value": {
+          "value": "vehicle.config.client.controller.use_triggers"
+        }
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/VehicleConfig$Debug": {
+    "name": "com/mrcrayfish/vehicle/VehicleConfig$Debug",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "renderOutlines",
+        "value": {
+          "value": "Render Vehicle Outlines"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "renderOutlines",
+        "value": {
+          "values": [
+            "If true, renders an outline of all the elements on a vehicle\u0027s model. Useful for debugging interactions."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "renderOutlines",
+        "value": {
+          "value": "vehicle.config.client.debug.render_outlines"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "reloadRaytracerEachTick",
+        "value": {
+          "value": "Reload Raytracer Each Tick"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "reloadRaytracerEachTick",
+        "value": {
+          "values": [
+            "If true, the raytracer will be reloaded each tick."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "reloadRaytracerEachTick",
+        "value": {
+          "value": "vehicle.config.client.debug.raytracer.continuous_reload"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "reloadVehiclePropertiesEachTick",
+        "value": {
+          "value": "Reload Vehicle Properties Each Tick"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "reloadVehiclePropertiesEachTick",
+        "value": {
+          "values": [
+            "If true, the vehicle properties will be reloaded each tick."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "reloadVehiclePropertiesEachTick",
+        "value": {
+          "value": "vehicle.config.client.debug.raytracer.vehicle_properties_reload"
+        }
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/VehicleConfig$Display": {
+    "name": "com/mrcrayfish/vehicle/VehicleConfig$Display",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "enabledSpeedometer",
+        "value": {
+          "value": "Show Speedometer"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "enabledSpeedometer",
+        "value": {
+          "values": [
+            "If true, displays a speedometer on the HUD when driving a vehicle"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "enabledSpeedometer",
+        "value": {
+          "value": "vehicle.config.client.display.speedometer"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "autoPerspective",
+        "value": {
+          "value": "Auto Perspective"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "autoPerspective",
+        "value": {
+          "values": [
+            "If true, automatically switches to third person when mounting vehicles"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "autoPerspective",
+        "value": {
+          "value": "vehicle.config.client.display.auto_perspective"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "workstationAnimation",
+        "value": {
+          "value": "Workstation Animation"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "workstationAnimation",
+        "value": {
+          "values": [
+            "If true, an animation is performed while cycling vehicles in the workstation"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "workstationAnimation",
+        "value": {
+          "value": "vehicle.config.client.display.workstation_animation"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "hoseSegments",
+        "value": {
+          "value": "Hose Segments"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "hoseSegments",
+        "value": {
+          "values": [
+            "The amount of segments to use to render the hose on a gas pump. The lower the value, the better the performance but renders a less realistically looking hose"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "hoseSegments",
+        "value": {
+          "value": "vehicle.config.client.display.hose_segments"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "hoseSegments",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "100"
+          },
+          "min": {
+            "type": "INT",
+            "value": "1"
+          }
+        }
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/VehicleConfig$Interaction": {
+    "name": "com/mrcrayfish/vehicle/VehicleConfig$Interaction",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "enabledLeftClick",
+        "value": {
+          "value": "Left-Click Enabled"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "enabledLeftClick",
+        "value": {
+          "values": [
+            "If true, raytraces will be performed on nearby vehicles when left-clicking the mouse, rather than just right-clicking it. This allows one to be damaged/broken when clicking anywhere on it, rather than just on its bounding box."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "enabledLeftClick",
+        "value": {
+          "value": "vehicle.config.client.interaction.left_click"
+        }
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/VehicleConfig$Server": {
+    "name": "com/mrcrayfish/vehicle/VehicleConfig$Server",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fuelEnabled",
+        "value": {
+          "value": "Fuel Enabled"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fuelEnabled",
+        "value": {
+          "values": [
+            "If true, vehicles will require fuel for them to be driven."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "fuelEnabled",
+        "value": {
+          "value": "vehicle.config.server.fuel_enabled"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "vehicleDamage",
+        "value": {
+          "value": "Vehicle Damage"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "vehicleDamage",
+        "value": {
+          "values": [
+            "If true, vehicles will take damage."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "vehicleDamage",
+        "value": {
+          "value": "vehicle.config.server.vehicle_damage"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "trailerDetachThreshold",
+        "value": {
+          "value": "Trailer Detach Distance"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "trailerDetachThreshold",
+        "value": {
+          "values": [
+            "The distance threshold before the trailer detaches from a vehicle"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "trailerDetachThreshold",
+        "value": {
+          "value": "vehicle.config.server.trailer_detach_threshold"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "trailerSyncCooldown",
+        "value": {
+          "value": "Trailer Sync Cooldown"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "trailerSyncCooldown",
+        "value": {
+          "values": [
+            "The amount of ticks to wait before syncing data to clients about the trailer connection. This is important for smooth trailer movement on client side."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "trailerSyncCooldown",
+        "value": {
+          "value": "vehicle.config.server.trailer_sync_cooldown"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "trailerInventorySyncCooldown",
+        "value": {
+          "value": "Trailer Inventory Sync Cooldown"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "trailerInventorySyncCooldown",
+        "value": {
+          "values": [
+            "The amount of ticks to wait before syncing trailer inventory to tracking clients. If the value is set to 0 or less, the inventory will not sync and will save on network usage."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "trailerInventorySyncCooldown",
+        "value": {
+          "value": "vehicle.config.server.trailer_inventory_sync_cooldown"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "pickUpVehicles",
+        "value": {
+          "value": "Pickup Vehicles"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "pickUpVehicles",
+        "value": {
+          "values": [
+            "Allows players to pick up vehicles by crouching and right clicking"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "pickUpVehicles",
+        "value": {
+          "value": "vehicle.config.server.pick_up_vehicles"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "maxHoseDistance",
+        "value": {
+          "value": "Max Hose Distance"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "maxHoseDistance",
+        "value": {
+          "values": [
+            "The maximum distance before the hose from the gas pump or fluid hose breaks"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "maxHoseDistance",
+        "value": {
+          "value": "vehicle.config.server.max_hose_distance"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "pipeTransferAmount",
+        "value": {
+          "value": "Pipe Transfer Amount"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "pipeTransferAmount",
+        "value": {
+          "values": [
+            "The amount of fluid a pipe will transfer each tick"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "pipeTransferAmount",
+        "value": {
+          "value": "vehicle.config.server.pipe_transfer_amount"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "pipeTransferAmount",
+        "values": {
+          "min": {
+            "type": "INT",
+            "value": "1"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "pumpTransferAmount",
+        "value": {
+          "value": "Pump Transfer Amount"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "pumpTransferAmount",
+        "value": {
+          "values": [
+            "The amount of fluid a pump will transfer each tick"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "pumpTransferAmount",
+        "value": {
+          "value": "vehicle.config.server.pump_transfer_amount"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "pumpTransferAmount",
+        "values": {
+          "min": {
+            "type": "INT",
+            "value": "1"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fuelConsumptionFactor",
+        "value": {
+          "value": "Fuel Consumption Factor"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fuelConsumptionFactor",
+        "value": {
+          "values": [
+            "Change the amount of fuel vehicles consumes by multiplying the consumption rate by this factor"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$LangKey;",
+        "target": "fuelConsumptionFactor",
+        "value": {
+          "value": "vehicle.config.erver.fuel_consumption_modifier"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "fuelConsumptionFactor",
+        "values": {
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/VehicleMod": {
+    "name": "com/mrcrayfish/vehicle/VehicleMod",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod;",
+        "target": "com/mrcrayfish/vehicle/VehicleMod",
+        "values": {
+          "acceptedMinecraftVersions": {
+            "value": "[1.12.2]"
+          },
+          "dependencies": {
+            "value": "required-after:obfuscate@[0.2.5,);after:cfm@[4.1.5,);after:controllable@[0.8.0,);required-after:forge@[14.23.4.2705,)"
+          },
+          "modid": {
+            "value": "vehicle"
+          },
+          "name": {
+            "value": "MrCrayfish\u0027s Vehicle Mod"
+          },
+          "version": {
+            "value": "0.44.1"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/fml/common/Mod$Instance;",
+        "target": "instance"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/fml/common/SidedProxy;",
+        "target": "proxy",
+        "values": {
+          "clientSide": {
+            "value": "com.mrcrayfish.vehicle.proxy.ClientProxy"
+          },
+          "serverSide": {
+            "value": "com.mrcrayfish.vehicle.proxy.ServerProxy"
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventHandler;",
+        "target": "onPreInit(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventHandler;",
+        "target": "onInit(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventHandler;",
+        "target": "onPostInit(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/client/ClientEvents": {
+    "name": "com/mrcrayfish/vehicle/client/ClientEvents",
+    "annotations": [
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onEntityMount(Lnet/minecraftforge/event/entity/EntityMountEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onKeyInput(Lnet/minecraftforge/fml/common/gameevent/InputEvent$KeyInputEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onRenderTick(Lnet/minecraftforge/fml/common/gameevent/TickEvent$RenderTickEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onFovUpdate(Lnet/minecraftforge/client/event/FOVUpdateEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onPreRender(Lcom/mrcrayfish/obfuscate/client/event/ModelPlayerEvent$Render$Pre;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onSetupAngles(Lcom/mrcrayfish/obfuscate/client/event/ModelPlayerEvent$SetupAngles$Post;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onClientTick(Lnet/minecraftforge/fml/common/gameevent/TickEvent$ClientTickEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onRenderHand(Lnet/minecraftforge/client/event/RenderSpecificHandEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onRenderThirdPerson(Lcom/mrcrayfish/obfuscate/client/event/RenderItemEvent$Held$Pre;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onModelRenderPost(Lcom/mrcrayfish/obfuscate/client/event/ModelPlayerEvent$Render$Post;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "renderCustomBlockHighlights(Lnet/minecraftforge/client/event/DrawBlockHighlightEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "setLiquidFogDensity(Lnet/minecraftforge/client/event/EntityViewRenderEvent$FogDensity;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onJump(Lnet/minecraftforge/fml/common/gameevent/InputEvent$KeyInputEvent;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/client/ControllerEvents": {
+    "name": "com/mrcrayfish/vehicle/client/ControllerEvents",
+    "annotations": [
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onButtonInput(Lcom/mrcrayfish/controllable/event/ControllerEvent$ButtonInput;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onControllerMove(Lcom/mrcrayfish/controllable/event/ControllerEvent$Move;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onAvailableActions(Lcom/mrcrayfish/controllable/event/AvailableActionsEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onRenderPlayerPreview(Lcom/mrcrayfish/controllable/event/RenderPlayerPreviewEvent;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/client/EntityRaytracer": {
+    "name": "com/mrcrayfish/vehicle/client/EntityRaytracer",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/mrcrayfish/vehicle/client/EntityRaytracer",
+        "value": {
+          "type": "ENUM",
+          "values": [
+            "Lnet/minecraftforge/fml/relauncher/Side;/CLIENT"
+          ]
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "raytraceEntitiesContinuously(Lnet/minecraftforge/fml/common/gameevent/TickEvent$ClientTickEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onMouseEvent(Lnet/minecraftforge/client/event/MouseEvent;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/client/HeldVehicleEvents": {
+    "name": "com/mrcrayfish/vehicle/client/HeldVehicleEvents",
+    "annotations": [
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onRenderPlayer(Lnet/minecraftforge/client/event/RenderPlayerEvent$Pre;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onSetupAngles(Lcom/mrcrayfish/obfuscate/client/event/ModelPlayerEvent$SetupAngles$Post;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/client/SpecialModels": {
+    "name": "com/mrcrayfish/vehicle/client/SpecialModels",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/mrcrayfish/vehicle/client/SpecialModels",
+        "values": {
+          "modid": {
+            "value": "vehicle"
+          },
+          "value": {
+            "type": "ENUM",
+            "values": [
+              "Lnet/minecraftforge/fml/relauncher/Side;/CLIENT"
+            ]
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "register(Lnet/minecraftforge/client/event/ModelRegistryEvent;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/client/gui/GuiHandler": {
+    "name": "com/mrcrayfish/vehicle/client/gui/GuiHandler",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/IGuiHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/client/model/CustomLoader": {
+    "name": "com/mrcrayfish/vehicle/client/model/CustomLoader",
+    "interfaces": [
+      "net/minecraftforge/client/model/ICustomModelLoader"
+    ]
+  },
+  "com/mrcrayfish/vehicle/client/model/ModelRamp": {
+    "name": "com/mrcrayfish/vehicle/client/model/ModelRamp",
+    "interfaces": [
+      "net/minecraftforge/client/model/IModel"
+    ]
+  },
+  "com/mrcrayfish/vehicle/client/model/ModelSteepRamp": {
+    "name": "com/mrcrayfish/vehicle/client/model/ModelSteepRamp",
+    "interfaces": [
+      "net/minecraftforge/client/model/IModel"
+    ]
+  },
+  "com/mrcrayfish/vehicle/client/model/baked/BakedModelRamp": {
+    "name": "com/mrcrayfish/vehicle/client/model/baked/BakedModelRamp",
+    "interfaces": [
+      "net/minecraft/client/renderer/block/model/IBakedModel"
+    ]
+  },
+  "com/mrcrayfish/vehicle/client/model/baked/BakedModelSteepRamp": {
+    "name": "com/mrcrayfish/vehicle/client/model/baked/BakedModelSteepRamp",
+    "interfaces": [
+      "net/minecraft/client/renderer/block/model/IBakedModel"
+    ]
+  },
+  "com/mrcrayfish/vehicle/client/render/layer/LayerHeldVehicle": {
+    "name": "com/mrcrayfish/vehicle/client/render/layer/LayerHeldVehicle",
+    "interfaces": [
+      "net/minecraft/client/renderer/entity/layers/LayerRenderer"
+    ]
+  },
+  "com/mrcrayfish/vehicle/common/CommonEvents": {
+    "name": "com/mrcrayfish/vehicle/common/CommonEvents",
+    "annotations": [
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onMissingItem(Lnet/minecraftforge/event/RegistryEvent$MissingMappings;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onMissingSound(Lnet/minecraftforge/event/RegistryEvent$MissingMappings;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onMissingEntity(Lnet/minecraftforge/event/RegistryEvent$MissingMappings;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onPlayerInteract(Lnet/minecraftforge/event/entity/player/PlayerInteractEvent$EntityInteractSpecific;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onPlayerInteract(Lnet/minecraftforge/event/entity/player/PlayerInteractEvent$RightClickBlock;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onPlayerInteract(Lnet/minecraftforge/event/entity/player/PlayerInteractEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onPlayerDeath(Lnet/minecraftforge/event/entity/living/LivingDeathEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onPlayerTick(Lnet/minecraftforge/fml/common/gameevent/TickEvent$PlayerTickEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onRightClick(Lnet/minecraftforge/event/entity/player/PlayerInteractEvent$RightClickItem;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onRightClick(Lnet/minecraftforge/event/entity/player/PlayerInteractEvent$RightClickBlock;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/common/entity/HeldVehicleDataHandler": {
+    "name": "com/mrcrayfish/vehicle/common/entity/HeldVehicleDataHandler",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/capabilities/CapabilityInject;",
+        "target": "CAPABILITY_HELD_VEHICLE",
+        "value": {
+          "type": "CLASS",
+          "value": "Lcom/mrcrayfish/vehicle/common/entity/HeldVehicleDataHandler$IHeldVehicle;"
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "attachCapabilities(Lnet/minecraftforge/event/AttachCapabilitiesEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onStartTracking(Lnet/minecraftforge/event/entity/player/PlayerEvent$StartTracking;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onPlayerJoinWorld(Lnet/minecraftforge/event/entity/EntityJoinWorldEvent;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/common/entity/HeldVehicleDataHandler$HeldVehicle": {
+    "name": "com/mrcrayfish/vehicle/common/entity/HeldVehicleDataHandler$HeldVehicle",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/common/entity/HeldVehicleDataHandler$IHeldVehicle"
+    ]
+  },
+  "com/mrcrayfish/vehicle/common/entity/HeldVehicleDataHandler$Provider": {
+    "name": "com/mrcrayfish/vehicle/common/entity/HeldVehicleDataHandler$Provider",
+    "interfaces": [
+      "net/minecraftforge/common/capabilities/ICapabilitySerializable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/common/entity/HeldVehicleDataHandler$Storage": {
+    "name": "com/mrcrayfish/vehicle/common/entity/HeldVehicleDataHandler$Storage",
+    "interfaces": [
+      "net/minecraftforge/common/capabilities/Capability$IStorage"
+    ]
+  },
+  "com/mrcrayfish/vehicle/common/entity/SyncedPlayerData": {
+    "name": "com/mrcrayfish/vehicle/common/entity/SyncedPlayerData",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/mrcrayfish/vehicle/common/entity/SyncedPlayerData",
+        "values": {
+          "modid": {
+            "value": "vehicle"
+          },
+          "value": {
+            "type": "ENUM",
+            "values": [
+              "Lnet/minecraftforge/fml/relauncher/Side;/SERVER"
+            ]
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onStartTracking(Lnet/minecraftforge/event/entity/player/PlayerEvent$StartTracking;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onPlayerJoinWorld(Lnet/minecraftforge/event/entity/EntityJoinWorldEvent;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/common/inventory/IAttachableChest": {
+    "name": "com/mrcrayfish/vehicle/common/inventory/IAttachableChest",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/common/inventory/IStorage"
+    ]
+  },
+  "com/mrcrayfish/vehicle/common/inventory/IStorage": {
+    "name": "com/mrcrayfish/vehicle/common/inventory/IStorage",
+    "interfaces": [
+      "net/minecraft/inventory/ISidedInventory"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/CustomDataSerializers$1": {
+    "name": "com/mrcrayfish/vehicle/entity/CustomDataSerializers$1",
+    "interfaces": [
+      "net/minecraft/network/datasync/DataSerializer"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/EntityJack": {
+    "name": "com/mrcrayfish/vehicle/entity/EntityJack",
+    "interfaces": [
+      "net/minecraftforge/fml/common/registry/IEntityAdditionalSpawnData"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/EntityPoweredVehicle": {
+    "name": "com/mrcrayfish/vehicle/entity/EntityPoweredVehicle",
+    "interfaces": [
+      "net/minecraft/inventory/IInventoryChangedListener"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/EntityVehicle": {
+    "name": "com/mrcrayfish/vehicle/entity/EntityVehicle",
+    "interfaces": [
+      "net/minecraftforge/fml/common/registry/IEntityAdditionalSpawnData"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/trailer/EntityFertilizerTrailer": {
+    "name": "com/mrcrayfish/vehicle/entity/trailer/EntityFertilizerTrailer",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable",
+      "com/mrcrayfish/vehicle/common/inventory/IStorage"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/trailer/EntityFluidTrailer": {
+    "name": "com/mrcrayfish/vehicle/entity/trailer/EntityFluidTrailer",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable",
+      "net/minecraftforge/fml/common/registry/IEntityAdditionalSpawnData"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/trailer/EntitySeederTrailer": {
+    "name": "com/mrcrayfish/vehicle/entity/trailer/EntitySeederTrailer",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable",
+      "com/mrcrayfish/vehicle/common/inventory/IStorage"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/trailer/EntityStorageTrailer": {
+    "name": "com/mrcrayfish/vehicle/entity/trailer/EntityStorageTrailer",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable",
+      "com/mrcrayfish/vehicle/common/inventory/IStorage"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/trailer/EntityVehicleTrailer": {
+    "name": "com/mrcrayfish/vehicle/entity/trailer/EntityVehicleTrailer",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityATV": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityATV",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityAluminumBoat": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityAluminumBoat",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityBath": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityBath",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityBumperCar": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityBumperCar",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityCouch": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityCouch",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityDirtBike": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityDirtBike",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityDuneBuggy": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityDuneBuggy",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityGoKart": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityGoKart",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityGolfCart": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityGolfCart",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityJetSki": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityJetSki",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityLawnMower": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityLawnMower",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityMiniBike": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityMiniBike",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityMiniBus": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityMiniBus",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityMoped": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityMoped",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable",
+      "com/mrcrayfish/vehicle/common/inventory/IAttachableChest"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityOffRoader": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityOffRoader",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityShoppingCart": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityShoppingCart",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntitySmartCar": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntitySmartCar",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntitySofacopter": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntitySofacopter",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntitySpeedBoat": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntitySpeedBoat",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntitySportsPlane": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntitySportsPlane",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/entity/vehicle/EntityTractor": {
+    "name": "com/mrcrayfish/vehicle/entity/vehicle/EntityTractor",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/client/EntityRaytracer$IEntityRaytraceable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/init/ModBlocks": {
+    "name": "com/mrcrayfish/vehicle/init/ModBlocks",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/registry/GameRegistry$ObjectHolder;",
+        "target": "com/mrcrayfish/vehicle/init/ModBlocks",
+        "value": {
+          "value": "vehicle"
+        }
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/init/ModItems": {
+    "name": "com/mrcrayfish/vehicle/init/ModItems",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/registry/GameRegistry$ObjectHolder;",
+        "target": "com/mrcrayfish/vehicle/init/ModItems",
+        "value": {
+          "value": "vehicle"
+        }
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/init/ModSounds": {
+    "name": "com/mrcrayfish/vehicle/init/ModSounds",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/registry/GameRegistry$ObjectHolder;",
+        "target": "com/mrcrayfish/vehicle/init/ModSounds",
+        "value": {
+          "value": "vehicle"
+        }
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/init/RegistrationHandler$Blocks": {
+    "name": "com/mrcrayfish/vehicle/init/RegistrationHandler$Blocks",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/mrcrayfish/vehicle/init/RegistrationHandler$Blocks",
+        "values": {
+          "modid": {
+            "value": "vehicle"
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "register(Lnet/minecraftforge/event/RegistryEvent$Register;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/init/RegistrationHandler$Items": {
+    "name": "com/mrcrayfish/vehicle/init/RegistrationHandler$Items",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/mrcrayfish/vehicle/init/RegistrationHandler$Items",
+        "values": {
+          "modid": {
+            "value": "vehicle"
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "register(Lnet/minecraftforge/event/RegistryEvent$Register;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/init/RegistrationHandler$Models": {
+    "name": "com/mrcrayfish/vehicle/init/RegistrationHandler$Models",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/mrcrayfish/vehicle/init/RegistrationHandler$Models",
+        "values": {
+          "modid": {
+            "value": "vehicle"
+          },
+          "value": {
+            "type": "ENUM",
+            "values": [
+              "Lnet/minecraftforge/fml/relauncher/Side;/CLIENT"
+            ]
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "register(Lnet/minecraftforge/client/event/ModelRegistryEvent;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/init/RegistrationHandler$Recipes": {
+    "name": "com/mrcrayfish/vehicle/init/RegistrationHandler$Recipes",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/mrcrayfish/vehicle/init/RegistrationHandler$Recipes",
+        "values": {
+          "modid": {
+            "value": "vehicle"
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "register(Lnet/minecraftforge/event/RegistryEvent$Register;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/init/RegistrationHandler$Sounds": {
+    "name": "com/mrcrayfish/vehicle/init/RegistrationHandler$Sounds",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventBusSubscriber;",
+        "target": "com/mrcrayfish/vehicle/init/RegistrationHandler$Sounds",
+        "values": {
+          "modid": {
+            "value": "vehicle"
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "registerSounds(Lnet/minecraftforge/event/RegistryEvent$Register;)V"
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/inventory/IStorageBlock": {
+    "name": "com/mrcrayfish/vehicle/inventory/IStorageBlock",
+    "interfaces": [
+      "net/minecraft/inventory/IInventory"
+    ]
+  },
+  "com/mrcrayfish/vehicle/item/ItemEngine": {
+    "name": "com/mrcrayfish/vehicle/item/ItemEngine",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/item/SubItems"
+    ]
+  },
+  "com/mrcrayfish/vehicle/item/ItemKey": {
+    "name": "com/mrcrayfish/vehicle/item/ItemKey",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/item/IDyeable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/item/ItemModels": {
+    "name": "com/mrcrayfish/vehicle/item/ItemModels",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/item/SubItems"
+    ]
+  },
+  "com/mrcrayfish/vehicle/item/ItemSprayCan": {
+    "name": "com/mrcrayfish/vehicle/item/ItemSprayCan",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/item/SubItems",
+      "com/mrcrayfish/vehicle/item/IDyeable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/item/ItemWheel": {
+    "name": "com/mrcrayfish/vehicle/item/ItemWheel",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/item/SubItems",
+      "com/mrcrayfish/vehicle/item/IDyeable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageAccelerating": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageAccelerating",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageAltitude": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageAltitude",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageAttachChest": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageAttachChest",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageAttachTrailer": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageAttachTrailer",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageCraftVehicle": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageCraftVehicle",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageCycleSeats": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageCycleSeats",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageDrift": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageDrift",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageEntityFluid": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageEntityFluid",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageFlaps": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageFlaps",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageFuelVehicle": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageFuelVehicle",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageHitchTrailer": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageHitchTrailer",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageHorn": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageHorn",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageInteractKey": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageInteractKey",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageOpenStorage": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageOpenStorage",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessagePickupVehicle": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessagePickupVehicle",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessagePower": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessagePower",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageStorageWindow": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageStorageWindow",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageSyncHeldVehicle": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageSyncHeldVehicle",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageSyncInventory": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageSyncInventory",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageSyncPlayerData": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageSyncPlayerData",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageSyncPlayerGasPumpPos": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageSyncPlayerGasPumpPos",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageSyncPlayerSeat": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageSyncPlayerSeat",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageSyncPlayerTrailer": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageSyncPlayerTrailer",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageThrowVehicle": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageThrowVehicle",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageTravelProperties": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageTravelProperties",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageTurnAngle": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageTurnAngle",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageTurnDirection": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageTurnDirection",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageVehicleInteract": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageVehicleInteract",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage"
+    ]
+  },
+  "com/mrcrayfish/vehicle/network/message/MessageVehicleWindow": {
+    "name": "com/mrcrayfish/vehicle/network/message/MessageVehicleWindow",
+    "interfaces": [
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessage",
+      "net/minecraftforge/fml/common/network/simpleimpl/IMessageHandler"
+    ]
+  },
+  "com/mrcrayfish/vehicle/proxy/ClientProxy": {
+    "name": "com/mrcrayfish/vehicle/proxy/ClientProxy",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/proxy/Proxy"
+    ],
+    "annotations": [
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onFogDensity(Lnet/minecraftforge/client/event/EntityViewRenderEvent$FogDensity;)V",
+        "values": {
+          "priority": {
+            "type": "ENUM",
+            "value": "Lnet/minecraftforge/fml/common/eventhandler/EventPriority;/NORMAL"
+          },
+          "receiveCanceled": {
+            "type": "BOOL",
+            "value": "true"
+          }
+        }
+      }
+    ]
+  },
+  "com/mrcrayfish/vehicle/proxy/ServerProxy": {
+    "name": "com/mrcrayfish/vehicle/proxy/ServerProxy",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/proxy/Proxy"
+    ]
+  },
+  "com/mrcrayfish/vehicle/recipe/RecipeColorSprayCan": {
+    "name": "com/mrcrayfish/vehicle/recipe/RecipeColorSprayCan",
+    "interfaces": [
+      "net/minecraft/item/crafting/IRecipe"
+    ]
+  },
+  "com/mrcrayfish/vehicle/recipe/RecipeRefillSprayCan": {
+    "name": "com/mrcrayfish/vehicle/recipe/RecipeRefillSprayCan",
+    "interfaces": [
+      "net/minecraft/item/crafting/IRecipe"
+    ]
+  },
+  "com/mrcrayfish/vehicle/tileentity/TileEntityFluidExtractor": {
+    "name": "com/mrcrayfish/vehicle/tileentity/TileEntityFluidExtractor",
+    "interfaces": [
+      "net/minecraft/inventory/IInventory",
+      "net/minecraft/util/ITickable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/tileentity/TileEntityFluidMixer": {
+    "name": "com/mrcrayfish/vehicle/tileentity/TileEntityFluidMixer",
+    "interfaces": [
+      "net/minecraft/inventory/IInventory",
+      "net/minecraft/util/ITickable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/tileentity/TileEntityFluidPipe": {
+    "name": "com/mrcrayfish/vehicle/tileentity/TileEntityFluidPipe",
+    "interfaces": [
+      "net/minecraft/util/ITickable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/tileentity/TileEntityGasPump": {
+    "name": "com/mrcrayfish/vehicle/tileentity/TileEntityGasPump",
+    "interfaces": [
+      "net/minecraft/util/ITickable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/tileentity/TileEntityJack": {
+    "name": "com/mrcrayfish/vehicle/tileentity/TileEntityJack",
+    "interfaces": [
+      "net/minecraft/util/ITickable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/tileentity/TileEntityVehicleCrate": {
+    "name": "com/mrcrayfish/vehicle/tileentity/TileEntityVehicleCrate",
+    "interfaces": [
+      "net/minecraft/util/ITickable"
+    ]
+  },
+  "com/mrcrayfish/vehicle/tileentity/TileEntityWorkstation": {
+    "name": "com/mrcrayfish/vehicle/tileentity/TileEntityWorkstation",
+    "interfaces": [
+      "com/mrcrayfish/vehicle/inventory/IStorageBlock"
+    ]
+  }
+}
