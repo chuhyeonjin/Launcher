@@ -78,6 +78,8 @@ ipcMain.on('distributionIndexDone', (event, res) => {
 
 app.disableHardwareAcceleration()
 
+// 이 밑부분의 ipc리스너는 Chu Hyeon-jin <choo51455145@gmail.com>의 코드를 기반으로 작성되었습니다.
+
 let MSALoginWindow = null
 
 // Open the Microsoft Account Login window
