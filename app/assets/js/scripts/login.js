@@ -333,6 +333,8 @@ loginButton.addEventListener('click', () => {
             })
 })
 
+// 여기부터 Chu Hyeon-jin <choo51455145@gmail.com>의 코드를 기반으로 작성되었습니다.
+
 loginMSButton.addEventListener('click', (event) => {
     ipcRenderer.send('openMSALoginWindow', 'open')
 }) 

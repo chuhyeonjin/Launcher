@@ -1,3 +1,5 @@
+// Chu Hyeon-jin <choo51455145@gmail.com>의 코드를 기반으로 작성되었습니다.
+
 // Requirements
 const request = require('request')
 // const logger = require('./loggerutil')('%c[Microsoft]', 'color: #01a6f0; font-weight: bold')
