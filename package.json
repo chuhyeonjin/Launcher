@@ -1,6 +1,6 @@
 {
   "name": "mercurylauncher",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "productName": "Mercury Launcher",
   "description": "Custom Minecraft Launcher",
   "author": "norhu1130 (https://github.com/norhu1130/)",
@@ -16,9 +16,9 @@
     "cilinux": "node build.js WINDOWS && node build.js LINUX",
     "cidarwin": "node build.js MAC",
     "dist": "cross-env ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=true node build.js",
-    "dist:win": "npm run dist -- WINDOWS",
-    "dist:mac": "npm run dist -- MAC",
-    "dist:linux": "npm run dist -- LINUX",
+    "dist:win": "npm run dist -- WINDOWS --publish always",
+    "dist:mac": "npm run dist -- MAC --publish always",
+    "dist:linux": "npm run dist -- LINUX --publish always",
     "lint": "eslint --config .eslintrc.json ."
   },
   "engines": {
