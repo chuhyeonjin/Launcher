@@ -17,7 +17,7 @@ function getCurrentPlatform(){
 
 builder.build({
     targets: (process.argv[2] != null && Platform[process.argv[2]] != null ? Platform[process.argv[2]] : getCurrentPlatform()).createTarget(),
-    publish: 'never',
+    publish: 'always',
     config: {
         appId: 'mercury-launcher',
         productName: 'Mercury Launcher',
