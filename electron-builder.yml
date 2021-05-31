@@ -1,0 +1,50 @@
+appId: 'mercury-launcher',
+productName: 'Mercury Launcher',
+artifactName: '${productName}-setup-${version}.${ext}',
+copyright: 'Copyright © 2020 Mercury Onlne',
+
+asar: true
+compression: 'maximum'
+
+files:
+  - '!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.travis.yml,.nvmrc,.eslintrc.json,build.js}'
+
+extraResources:
+  - 'libraries'
+
+# Windows Configuration
+win: 
+  target: 
+    - target: 'nsis'
+      arch: 'x64'
+
+# Windows Installer Configuration
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+
+# macOS Configuration
+mac:
+  target:
+    - target: 'dmg'
+      arch:
+        - 'x64'
+        - 'arm64'
+  artifactName: '${productName}-setup-${version}-${arch}.${ext}'
+  category: 'public.app-category.games'
+
+# Linux Configuration
+linux: 
+  target: 'AppImage',
+  maintainer: 'norhu1130',
+  vendor: 'Mercury Online',
+  synopsis: 'Custom Minecraft Launcher for Mercury',
+  description: 'Custom Minecraft Launcher for Mercury',
+  category: 'Game'
+
+
+directories:
+  buildResources: 'build'
+  output: 'dist' 

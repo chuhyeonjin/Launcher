@@ -15,10 +15,10 @@
     "start": "electron .",
     "cilinux": "node build.js WINDOWS && node build.js LINUX",
     "cidarwin": "node build.js MAC",
-    "dist": "cross-env ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=true node build.js",
-    "dist:win": "npm run dist -- WINDOWS --publish always",
-    "dist:mac": "npm run dist -- MAC --publish always",
-    "dist:linux": "npm run dist -- LINUX --publish always",
+    "dist": "electron-builder build",
+    "dist:win": "npm run dist -- -w --publish always",
+    "dist:mac": "npm run dist -- m --publish always",
+    "dist:linux": "npm run dist -- -l --publish always",
     "lint": "eslint --config .eslintrc.json ."
   },
   "engines": {
