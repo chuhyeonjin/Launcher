@@ -37,11 +37,11 @@ mac:
 
 # Linux Configuration
 linux: 
-  target: 'AppImage',
-  maintainer: 'norhu1130',
-  vendor: 'Mercury Online',
-  synopsis: 'Custom Minecraft Launcher for Mercury',
-  description: 'Custom Minecraft Launcher for Mercury',
+  target: 'AppImage'
+  maintainer: 'norhu1130'
+  vendor: 'Mercury Online'
+  synopsis: 'Custom Minecraft Launcher for Mercury'
+  description: 'Custom Minecraft Launcher for Mercury'
   category: 'Game'
 
 
