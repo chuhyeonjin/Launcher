@@ -1,7 +1,7 @@
-appId: 'mercury-launcher',
-productName: 'Mercury Launcher',
-artifactName: '${productName}-setup-${version}.${ext}',
-copyright: 'Copyright © 2020 Mercury Onlne',
+appId: 'mercury-launcher'
+productName: 'Mercury Launcher'
+artifactName: '${productName}-setup-${version}.${ext}'
+copyright: 'Copyright © 2020 Mercury Onlne'
 
 asar: true
 compression: 'maximum'
