@@ -6,7 +6,7 @@ copyright: 'Copyright © 2020 Mercury Onlne'
 asar: true
 compression: 'maximum'
 protocols:
-    name : "Mercury Launcher",
+    name : "Mercury Launcher"
     schemes : [mercury-launcher]
 
 files:
