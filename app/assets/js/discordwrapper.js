@@ -11,7 +11,7 @@ exports.initRPC = function(genSettings, servSettings, initialDetails = '로딩 �
 
     activity = {
         details: initialDetails,
-        state: 'Server: ' + 'BD 온라인',
+        state: '수성 온라인!',
         largeImageKey: servSettings.largeImageKey,
         largeImageText: servSettings.largeImageText,
         smallImageKey: genSettings.smallImageKey,
