@@ -5,6 +5,9 @@ copyright: 'Copyright © 2020 Mercury Onlne'
 
 asar: true
 compression: 'maximum'
+protocols:
+    name : "Mercury Launcher",
+    schemes : [mercury-launcher]
 
 files:
   - '!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.travis.yml,.nvmrc,.eslintrc.json,build.js}'

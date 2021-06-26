@@ -1,5 +1,10 @@
 {
   "version": "1.0.0",
+  "discord": {
+    "clientId": "858169306234748948",
+    "smallImageText": "수성 온라인!",
+    "smallImageKey": "seal-circle"
+  },
   "rss": "https://01094986943a.wixsite.com/my-site/blog-feed.xml",
   "servers": [
     {
@@ -9,6 +14,11 @@
       "icon": "https://github.com/norhu1130/Launcher/blob/master/app/assets/images/MCRLogo.png?raw=true",
       "version": "1.0.0",
       "address": "221.162.218.210:25565",
+      "discord": {
+        "shortId": "Mercury",
+        "largeImageText": "수성온라인 서버",
+        "largeImageKey": "server-prod"
+      },
       "minecraftVersion": "1.12.2",
       "mainServer": true,
       "autoconnect": true,

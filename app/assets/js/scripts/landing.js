@@ -464,7 +464,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
 // Keep reference to Minecraft Process
 let proc
 // Is DiscordRPC enabled
-//let hasRPC = false
+let hasRPC = false
 // Joined server regex
 // Change this if your server uses something different.
 const GAME_JOINED_REGEX = /\[.+\]: Sound engine started/
@@ -491,7 +491,7 @@ function dlAsync(login = true){
     }
 
     setLaunchDetails('잠시만 기다려 주세요...')
-    DiscordWrapper.updateDetails('수성 온라인 설치 중..')
+    DiscordWrapper.updateDetails('수성 온라인 실행 준비 중..')
     toggleLaunchArea(true)
     setLaunchPercentage(0, 100)
 
@@ -651,7 +651,7 @@ function dlAsync(login = true){
                 setLaunchDetails('게임을 시작하는 중...')
 
                 // const SERVER_JOINED_REGEX = /\[.+\]: \[CHAT\] [a-zA-Z0-9_]{1,16} joined the game/
-                const SERVER_JOINED_REGEX = new RegExp(`\\[.+\\]: \\[CHAT\\] ${authUser.displayName} joined the game`)
+                const SERVER_JOINED_REGEX = new RegExp(`\\[.+\\]: \\[CHAT\\] [+] ${authUser.displayName}[ÇöÀç Á¢¼ÓÀÚ ¼ö: 4¸í]`)
 
                 const onLoadComplete = () => {
                     toggleLaunchArea(false)
